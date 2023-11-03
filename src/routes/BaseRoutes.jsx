@@ -1,16 +1,16 @@
 import { lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
+const AnimationIntro = lazy(() => import("../components/anim/AnimationIntro"));
 const LayoutAuth = lazy(() => import("../components/auth/LayoutAuth"));
 const LayoutDasboard = lazy(() =>
-  import("../components/dashboard/LayoutDashboard")
+  import("../components/app/LayoutDashboard")
 );
-const LayoutScheduling = lazy(() => import("../components/managepatient/LayoutManagePatient"));
 
 export const routes = {
-  AUTH: "/",
-  DASHBOARD: "/dashboard",
-  SCHEDULING: "/scheduling"
+  ANIM: "/",
+  AUTH: "/authentication",
+  DASHBOARD: "/chat",
 };
 
 const BaseRoutes = () => {
@@ -20,14 +20,9 @@ const BaseRoutes = () => {
   return (
     <>
       <Routes location={background || location}>
+        <Route path={routes.ANIM} element={<AnimationIntro />} />
         <Route path={routes.AUTH} element={<LayoutAuth />} />
-        <Route path={routes.SCHEDULING} element={<LayoutScheduling />} />
-        <Route
-          path={routes.DASHBOARD}
-          element={
-            <LayoutDasboard />
-          }
-        />
+        <Route path={routes.DASHBOARD} element={<LayoutDasboard />} />
       </Routes>
     </>
   );

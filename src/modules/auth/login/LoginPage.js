@@ -19,7 +19,7 @@ const LoginPage = ({ onComponentChange }) => {
     <>
       <div className="logocontainer">
         <img src={resources.logo} alt="logo" />
-        <span className="logotext">MediSync</span>
+        <span className="logotext">JAi Assistant</span>
         <span className="logintext">Login</span>
       </div>
       <div className="formcontainer">

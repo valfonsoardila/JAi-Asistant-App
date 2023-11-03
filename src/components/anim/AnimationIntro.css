@@ -1,0 +1,203 @@
+.animation-intro-container {
+  background-image: url(../../assets/imgs/fondo4.jpg);
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.animation-intro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center; /* Centrar vertical y horizontalmente */
+}
+.animation-title{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20%;
+  justify-content: center;
+  align-items: center; /* Centrar vertical y horizontalmente */
+}
+.animation-title h1{
+  color: rgb(142, 143, 161);
+  font-size: 30px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  @media only screen and (min-width: 768px) {
+    font-size: 44px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 44px;
+  }
+}
+.animation-title span{
+  color: rgb(151, 152, 180);
+  font-size: 20px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  @media only screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 24px;
+  }
+}
+.animation-silhouette{
+  display: flex;
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  align-items: center; /* Centrar vertical y horizontalmente */
+}
+.animation-silhouette img{
+  width: 800px;
+  @media only screen and (min-width: 768px) {
+    width: 70%;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 90%;
+  }
+}
+.animation-intro-container {
+  position: relative;
+}
+
+.animation-silhouette {
+  position: relative;
+}
+
+.gif-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Asegura que el GIF esté encima de la imagen */
+  width: 90% !important; /* Define el ancho deseado para el GIF */
+  @media only screen and (min-width: 768px) {
+    width: 70% !important;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 35% !important;
+  }
+}
+.container h2 {
+  color: white;
+  margin: 0rem;
+  font-size: 54px;
+}
+.container span {
+  color: white;
+  margin: 0rem;
+  font-size: 18px;
+}
+.content {
+  margin: 5%;
+}
+.content__container:hover span {
+  background: linear-gradient(90deg, rgb(255, 255, 255, .2), rgb(220, 220, 220, .2));
+  border: 0.5px solid rgba(34, 34, 34, .5);
+  border-radius: 5px;
+}
+.content__container span {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  line-height: 35px; /* Igual al tamaño de fuente para centrar verticalmente */
+  display: inline-block; /* Hacer que el span se ajuste al contenido */
+  cursor: pointer;
+}
+
+.content__container span.fade-out {
+  opacity: 0;
+}
+
+/* Animación de los corchetes [ ] */
+.content__container span::before,
+.conten.content__container span::after {
+  content: "[";
+  animation: blink 1s step-end infinite;
+  color: rgb(22, 158, 242);
+  position: absolute;
+  top: 0;
+  left: -20px; /* Espacio ajustable a la izquierda */
+  width: auto; /* Ancho ajustable automáticamente */
+  font-size: 32px; /* Cambiar el tamaño de los corchetes */
+  line-height: 32px; /* Igual al tamaño de fuente para centrar verticalmente */
+}
+
+.content__container span::after {
+  content: "]";
+  animation: blink 1s step-end infinite;
+  color: rgb(22, 158, 242);
+  position: absolute;
+  top: 0;
+  right: -20px; /* Espacio ajustable a la izquierda */
+  width: auto; /* Ancho ajustable automáticamente */
+  font-size: 32px; /* Cambiar el tamaño de los corchetes */
+  line-height: 32px; /* Igual al tamaño de fuente para centrar verticalmente */
+}
+
+/* Animación de cambio de palabra */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes change {
+  0%,
+  12.66%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%,
+  29.32% {
+    transform: translate3d(0, -25%, 0);
+  }
+  33.32%,
+  45.98% {
+    transform: translate3d(0, -50%, 0);
+  }
+  49.98%,
+  62.64% {
+    transform: translate3d(0, -75%, 0);
+  }
+  66.64%,
+  79.3% {
+    transform: translate3d(0, -50%, 0);
+  }
+  83.3%,
+  95.96% {
+    transform: translate3d(0, -25%, 0);
+  }
+}
