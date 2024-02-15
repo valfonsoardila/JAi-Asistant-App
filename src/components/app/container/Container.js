@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "../header/Header";
 import HomePage from "../../../modules/dashboard/home/HomePage";
-import ProfilePage from "../../../modules/dashboard/profile/ProfilePage";
-import AppointmentCalendar from "../../../modules/dashboard/appointment/AppointmentCalendarPage";
-import DiagnosesPage from "../../../modules/dashboard/patient/diagnoses/DiagnosesPage";
-import HistoriesPage from "../../../modules/dashboard/patient/histories/HistoriesPage";
-import SchedulPage from "../../../modules/dashboard/schedule/SchedulePage";
+// import ProfilePage from "../../../modules/dashboard/profile/ProfilePage";
+// import AppointmentCalendar from "../../../modules/dashboard/appointment/AppointmentCalendarPage";
+// import DiagnosesPage from "../../../modules/dashboard/patient/diagnoses/DiagnosesPage";
+// import HistoriesPage from "../../../modules/dashboard/patient/histories/HistoriesPage";
+// import SchedulPage from "../../../modules/dashboard/schedule/SchedulePage";
 import { motion } from "framer-motion";
 import "./Container.css";
 
@@ -25,7 +25,7 @@ const Container = ({activeComponent}) => {
           {activeComponent === "dashboard" && (
             <HomePage />
           )}
-          {
+          {/* {
             activeComponent === "appointment" && (
               <AppointmentCalendar />
             )
@@ -41,7 +41,7 @@ const Container = ({activeComponent}) => {
           )}
           {activeComponent === "profile" && (
             <ProfilePage />
-          )}
+          )} */}
         </motion.div>
       </div>
     </motion.div>

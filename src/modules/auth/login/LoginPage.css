@@ -12,7 +12,7 @@
 }
 .logotext {
   font-size: 40px;
-  color: rgb(5, 219, 230);
+  color: rgb(129, 130, 150);
   font-weight: 600;
   @media only screen and (max-width: 260px) {
     font-size: 16px;
@@ -86,7 +86,7 @@
 .form-group span {
   margin-top: 1%;
   align-self: start;
-  color: rgb(5, 219, 230);
+  color: rgb(129, 130, 150);
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -155,7 +155,7 @@
   color: #000;
 }
 .form-footer-text span {
-  color: rgb(5, 219, 230);
+  color: rgb(3, 204, 214);
   font-weight: 600;
   cursor: pointer;
 }
