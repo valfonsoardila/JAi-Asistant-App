@@ -8,26 +8,7 @@ const AnimationIntro = () => {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
-  const words = ["Bienvenido", "Continuar", "↵"]; // Lista de palabras
-  const [currentWord, setCurrentWord] = useState(words[0]);
   const [isTransitioning, setIsTransitioning] = useState(false);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const currentIndex = words.indexOf(currentWord);
-      const nextIndex = (currentIndex + 1) % words.length;
-      setIsTransitioning(true);
-
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setTimeout(() => {
-          setCurrentWord(words[nextIndex]);
-        }, 100); // Agregamos un pequeño retraso antes de cambiar la palabra para asegurar la animación de desvanecimiento
-      }, 500);
-    }, 2000);
-
-    return () => clearInterval(intervalId);
-  }, [currentWord, words]);
   function handleOnClick() {
     window.location.href = "/authentication";
   }
@@ -63,7 +44,7 @@ const AnimationIntro = () => {
               className={`transition ${isTransitioning ? "fade-out" : ""}`}
               onClick={handleOnClick}
             >
-              {currentWord}
+              Continuar
             </span>
           </div>
         </div>

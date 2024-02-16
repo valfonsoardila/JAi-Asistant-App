@@ -22,26 +22,23 @@ const Container = ({activeComponent}) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="main-container-body-content">
-          {activeComponent === "dashboard" && (
+          {activeComponent === "home" && (
             <HomePage />
           )}
-          {/* {
-            activeComponent === "appointment" && (
-              <AppointmentCalendar />
+          {
+            activeComponent === "chats" && (
+              {/* <AppointmentCalendar /> */}
             )
           }
-          {activeComponent === "diagnoses" && (
-            <DiagnosesPage />
-          )}
-          {activeComponent === "histories" && (
-            <HistoriesPage />
-          )}
-          {activeComponent === "schedule" && (
-            <SchedulPage />
-          )}
           {activeComponent === "profile" && (
-            <ProfilePage />
-          )} */}
+            {/* <DiagnosesPage /> */}
+          )}
+          {activeComponent === "support" && (
+            {/* <HistoriesPage /> */}
+          )}
+          {activeComponent === "settings" && (
+            {/* <SchedulPage /> */}
+          )}
         </motion.div>
       </div>
     </motion.div>

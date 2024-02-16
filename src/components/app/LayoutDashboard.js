@@ -5,7 +5,7 @@ import Container from './container/Container';
 import { resources } from "../../assets/resources";
 
 const LayoutDashboard = () => {
-  const [activeComponent, setActiveComponent] = useState("dashboard");
+  const [activeComponent, setActiveComponent] = useState("home");
   const handleComponentChange = (component) => {
     setActiveComponent(component);
     console.log("componente: "+component);

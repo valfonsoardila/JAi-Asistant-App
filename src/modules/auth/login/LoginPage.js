@@ -13,7 +13,7 @@ const LoginPage = ({ onComponentChange }) => {
     onComponentChange("forgot");
   };
     const login = () => {
-    window.location.href = "/dashboard";
+    window.location.href = "/home";
   };
   return (
     <>

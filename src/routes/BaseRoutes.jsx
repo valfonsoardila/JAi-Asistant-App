@@ -10,7 +10,7 @@ const LayoutDasboard = lazy(() =>
 export const routes = {
   ANIM: "/",
   AUTH: "/authentication",
-  DASHBOARD: "/chat",
+  DASHBOARD: "/home",
 };
 
 const BaseRoutes = () => {

@@ -1,45 +1,28 @@
 import React, { useState } from "react";
 import { resources } from "../../../assets/resources";
+import menuItem from "../../../assets/jsons/menu.item.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendar,
-  faClock,
-  faCog,
-  faDashboard,
+  faHome,
+  faToolbox,
+  faWrench,
   faDoorOpen,
-  faHeartPulse,
-  faStethoscope,
+  faComment,
   faUser,
+  faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.css";
 
 const Sidebar = ({ onComponentChange }) => {
   const [expandedData, setExpandedData] = useState(false);
   const [hover, setHover] = useState(false);
+  const [selectedItem, setSelectedItem] = useState("home"); // Nuevo estado para el ítem seleccionado
 
-  const handleDashboardClick = () => {
-    onComponentChange("dashboard");
-    console.log("dashboard");
+  const handleMenuItemClick = (menuItemName) => {
+    setSelectedItem(menuItemName); // Establecer el ítem seleccionado al hacer clic en él
+    onComponentChange(menuItemName); // Llamar a la función de cambio de componente
   };
 
-  const handleAppointmentClick = () => {
-    onComponentChange("appointment");
-  };
-  const handleDiagnosesClick = () => {
-    onComponentChange("diagnoses");
-  };
-  const handleHistoriesClick = () => {
-    onComponentChange("histories");
-    console.log("histories");
-  };
-  const handleScheduleClick = () => {
-    onComponentChange("schedule");
-    console.log("schedule");
-  };
-  const handleProfileClick = () => {
-    onComponentChange("profile");
-    console.log("profile");
-  };
   const handleOutSesionClick = () => {
     window.location.href = "/";
   };
@@ -62,75 +45,70 @@ const Sidebar = ({ onComponentChange }) => {
         >
           <img src={resources.logo} alt="logo" />
         </div>
-        <h1 style={{ display: hover ? "none" : "block" }}>Dashboard</h1>
+        <h1 style={{ display: hover ? "none" : "block" }}>JAi</h1>
       </div>
       <div className="profile">
         <img src={resources.user} alt="profile" />
-        <h1>Admin</h1>
+        <h1>USER</h1>
       </div>
       <div className="sidebar-menu">
         <div className="sidebar-title">
           <span>Menu</span>
         </div>
-        <div className="sidebar-menu-item" onClick={handleDashboardClick}>
-          <FontAwesomeIcon icon={faDashboard} />
-          <span
-            style={{ display: hover ? "flex" : "none" }}
-            onClick={handleDashboardClick}
-          >
-            Statistics
-          </span>
-        </div>
-        <div className="sidebar-menu-item" onClick={handleAppointmentClick}>
-          <FontAwesomeIcon icon={faCalendar} />
+        <div
+          className="sidebar-menu-item"
+          onClick={() => handleMenuItemClick("home")}
+        >
+          <FontAwesomeIcon icon={faHome} />
           <span style={{ display: hover ? "flex" : "none" }}>
-            Medical calendar
+            {menuItem.item1}
           </span>
+          {selectedItem === "home" && <FontAwesomeIcon icon={faCaretRight} fade />}{" "}
+          {/* Mostrar el icono de faAngleRight si el ítem está seleccionado */}
         </div>
-        <div className="collapsible-item" onClick={toggleExpandedData}>
-          <div className="collapsible-header">
-            <FontAwesomeIcon icon={faUser} />
-            <span style={{ display: hover ? "flex" : "none" }}>
-              Patient Control
-            </span>
-          </div>
-          {expandedData === true && hover === true ? (
-            <div className="collapsible-body">
-              <div
-                className="collapsible-body-item"
-                onClick={handleDiagnosesClick}
-              >
-                <FontAwesomeIcon icon={faHeartPulse} />
-                <span style={{ display: hover ? "flex" : "none" }}>
-                  Diagnosis
-                </span>
-              </div>
-              <div
-                className="collapsible-body-item"
-                onClick={handleHistoriesClick}
-              >
-                <FontAwesomeIcon icon={faStethoscope} />
-                <span style={{ display: hover ? "flex" : "none" }}>
-                  Clinical history
-                </span>
-              </div>
-            </div>
-          ) : null}
-        </div>
-        <div className="sidebar-menu-item" onClick={handleScheduleClick}>
-          <FontAwesomeIcon icon={faClock} />
+        <div
+          className="sidebar-menu-item"
+          onClick={() => handleMenuItemClick("chats")}
+        >
+          <FontAwesomeIcon icon={faComment} />
           <span style={{ display: hover ? "flex" : "none" }}>
-            Work schedule
+            {menuItem.item2}
           </span>
+          {selectedItem === "chats" && <FontAwesomeIcon icon={faCaretRight} fade />}{" "}
+          {/* Mostrar el icono de faAngleRight si el ítem está seleccionado */}
         </div>
-        <div className="sidebar-menu-item" onClick={handleProfileClick}>
-          <FontAwesomeIcon icon={faCog} onClick={handleProfileClick} />
-          <span
-            style={{ display: hover ? "flex" : "none" }}
-            onClick={handleProfileClick}
-          >
-            Settings
+        <div
+          className="sidebar-menu-item"
+          onClick={() => handleMenuItemClick("profile")}
+        >
+          <FontAwesomeIcon icon={faUser} />
+          <span style={{ display: hover ? "flex" : "none" }}>
+            {menuItem.item3}
           </span>
+          {selectedItem === "profile" && <FontAwesomeIcon icon={faCaretRight} fade />}{" "}
+          {/* Mostrar el icono de faAngleRight si el ítem está seleccionado */}
+        </div>
+        <div
+          className="sidebar-menu-item"
+          onClick={() => handleMenuItemClick("support")}
+        >
+          <FontAwesomeIcon icon={faToolbox} />
+          <span style={{ display: hover ? "flex" : "none" }}>
+            {menuItem.item4}
+          </span>
+          {selectedItem === "support" && <FontAwesomeIcon icon={faCaretRight} fade />}{" "}
+          {/* Mostrar el icono de faAngleRight si el ítem está seleccionado */}
+        </div>
+        <div
+          className="sidebar-menu-item"
+          onClick={() => handleMenuItemClick("settings")}
+        >
+          <FontAwesomeIcon icon={faWrench} />
+          <span style={{ display: hover ? "flex" : "none" }}>
+            {menuItem.item5}
+          </span>
+          {selectedItem === "settings" && <FontAwesomeIcon icon={faCaretRight} fade />}{" "}
+          {/* Mostrar el icono de faAngleRight si el ítem está seleccionado */}
         </div>
       </div>
       <div className="sidebar-menu-sesion">
@@ -139,7 +117,9 @@ const Sidebar = ({ onComponentChange }) => {
           onClick={handleOutSesionClick}
         >
           <FontAwesomeIcon icon={faDoorOpen} />
-          <span style={{ display: hover ? "flex" : "none" }}>Log out</span>
+          <span style={{ display: hover ? "flex" : "none" }}>
+            {menuItem.item6}
+          </span>
         </div>
       </div>
     </div>
