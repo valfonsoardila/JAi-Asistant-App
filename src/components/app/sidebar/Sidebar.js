@@ -14,7 +14,6 @@ import {
 import "./Sidebar.css";
 
 const Sidebar = ({ onComponentChange }) => {
-  const [expandedData, setExpandedData] = useState(false);
   const [hover, setHover] = useState(false);
   const [selectedItem, setSelectedItem] = useState("home"); // Nuevo estado para el ítem seleccionado
 
@@ -28,9 +27,6 @@ const Sidebar = ({ onComponentChange }) => {
   };
   const changeHover = () => {
     setHover(!hover);
-  };
-  const toggleExpandedData = () => {
-    setExpandedData(!expandedData);
   };
   return (
     <div

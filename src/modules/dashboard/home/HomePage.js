@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./HomePage.css";
-import * as echarts from "echarts";
+// import * as echarts from "echarts";
+import {resources} from "../../../assets/resources";
+import CustomButton from "../../../components/utils/buttons/ButtonNewChat";
 import { motion } from "framer-motion";
 
 const HomePage = () => {
@@ -11,6 +13,14 @@ const HomePage = () => {
       <div className="columnOne">
         <div className="columnOne-rowOne">
           {/* <div id="chart" className="chart-lineal"/> */}
+          <div className="columnOne-content">
+            <img src={resources.jaiassistant4} alt="logo" className="logo" />
+            <div className="columnOne-content-text">
+              <h1>¡Bienvenido!</h1>
+              <h1>Hola, Soy JAI 👋</h1>
+              <CustomButton text="Nuevo Chat" />
+            </div>
+          </div>
         </div>
         <div className="columnOne-rowTwo"></div>
       </div>

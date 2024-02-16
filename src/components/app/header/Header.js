@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
-const Header = () => {
+const Header = ({ onComponentChange }) => {
   const [openHeader, setOpenHeader] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const changeOpenSearch = () => {
@@ -44,16 +44,18 @@ const Header = () => {
         style={{ display: openHeader ? "flex" : "none" }}
       >
         <div className="header-title">
-          <h1>Mi nombre</h1>
+          {onComponentChange === "home" && <h1>Inicio</h1>}
+          {onComponentChange === "chats" && <h1>Chats</h1>}
+          {onComponentChange === "profile" && <h1>Perfil</h1>}
+          {onComponentChange === "support" && <h1>Soporte</h1>}
+          {onComponentChange === "settings" && <h1>Configuración</h1>}
         </div>
         <div className="header-body">
           <div
             className="header-container-search"
             style={{ width: openSearch ? "fit-content" : "24%" }}
           >
-            <div
-              className="header-body-search"
-            >
+            <div className="header-body-search">
               <input
                 type="text"
                 placeholder="Buscar"

@@ -1,11 +1,10 @@
 import React from "react";
 import Header from "../header/Header";
 import HomePage from "../../../modules/dashboard/home/HomePage";
-// import ProfilePage from "../../../modules/dashboard/profile/ProfilePage";
-// import AppointmentCalendar from "../../../modules/dashboard/appointment/AppointmentCalendarPage";
-// import DiagnosesPage from "../../../modules/dashboard/patient/diagnoses/DiagnosesPage";
-// import HistoriesPage from "../../../modules/dashboard/patient/histories/HistoriesPage";
-// import SchedulPage from "../../../modules/dashboard/schedule/SchedulePage";
+import ChatPage from "../../../modules/dashboard/chat/ChatPage";
+import ProfilePage from "../../../modules/dashboard/profile/ProfilePage";
+import SupportPage from "../../../modules/dashboard/support/SupportPage";
+import SettingsPage from "../../../modules/dashboard/setting/SettingPage";
 import { motion } from "framer-motion";
 import "./Container.css";
 
@@ -16,7 +15,7 @@ const Container = ({activeComponent}) => {
     exit={{ opacity: 0 }}
     transition={{ duration: 0.7 }}
     className="main-container-content">
-      <Header />
+      <Header onComponentChange={activeComponent} />
       <div className="main-container-body">
         <motion.div initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -27,17 +26,17 @@ const Container = ({activeComponent}) => {
           )}
           {
             activeComponent === "chats" && (
-              {/* <AppointmentCalendar /> */}
+              <ChatPage />
             )
           }
           {activeComponent === "profile" && (
-            {/* <DiagnosesPage /> */}
+            <ProfilePage />
           )}
           {activeComponent === "support" && (
-            {/* <HistoriesPage /> */}
+            <SupportPage />
           )}
           {activeComponent === "settings" && (
-            {/* <SchedulPage /> */}
+            <SettingsPage />
           )}
         </motion.div>
       </div>

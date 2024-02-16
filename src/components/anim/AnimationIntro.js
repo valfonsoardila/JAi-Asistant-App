@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import "./AnimationIntro.css";
 import { resources } from "../../assets/resources";
 import { motion } from "framer-motion";

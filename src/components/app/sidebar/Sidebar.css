@@ -6,7 +6,7 @@
   width: 8%;
   transition: width 0.5s;
   height: 100%;
-  background: rgb(94, 242, 242, .6);
+  background: rgb(255, 255, 255, .4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .container-sidebar:hover {
@@ -29,7 +29,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(200, 200, 200, 0.2);
     transition: all 0.2s;
 }
 .sidebar-logo-circle img{
